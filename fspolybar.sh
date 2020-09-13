@@ -9,7 +9,7 @@ base=$(df -h $partitionS |awk '{print " "$3" "$5" de "$2}'|sed '1d')
 
 for (( i = 0; i <= $((${#iconS[@]}-1)); i++ ))
 {
-	echo -n "| ${iconS[$i]} $(sed -n ''$(($i+1))'p' <<< "$base") "
+	echo -n " ${iconS[$i]} $(sed -n ''$(($i+1))'p' <<< "$base") "
 }
 
 
