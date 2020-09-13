@@ -4,8 +4,8 @@
 partitionS="/dev/sdb4 /dev/sdb7 /dev/sda3"
 # Especificar os ícones em ordem com a $partitionS, separadas por espaços;
 iconS=("" "" "")
-# Base
-base=$(df -h $partitionS |awk '{print " "$3" "$5" de "$2}'|sed '1d')
+# Altere [ sed 's/\/home\/losaoall//g ] por [ sed 's/\/home\/SeuUser//g ] 
+base=$(df -h $partitionS |awk '{print " "$6" "$3" "$5" de "$2}'|sed '1d'|sed 's/\/home\/losaoall\///g')
 
 for (( i = 0; i <= $((${#iconS[@]}-1)); i++ ))
 {
